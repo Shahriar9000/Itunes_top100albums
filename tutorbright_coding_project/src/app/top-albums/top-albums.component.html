@@ -1,12 +1,17 @@
-<div *ngIf="top100Albums">
-    <h1>Top 100 Albums</h1>
-    <ul>
-      <li *ngFor="let album of top100Albums">
-        <img [src]="album['im:image'][2].label" alt="{{ album['im:name'].label }}">
-        <h2>{{ album['im:name'].label }}</h2>
-        <p>Artist: {{ album['im:artist'].label }}</p>
-        <p>Price: {{ album['im:price'].label }}</p>
-      </li>
-    </ul>
+<div class="container">
+    <h1 class="text-center my-4">Top 100 Albums</h1>
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let album of top100Albums">
+        <div class="card mb-4">
+          <img [src]="album['im:image'][2].label" class="card-img-top" alt="{{ album['im:name'].label }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ album['im:name'].label }}</h5>
+            <p class="card-text">Artist: {{ album['im:artist'].label }}</p>
+            <p class="card-text">Price: {{ album['im:price'].label }}</p>
+            <a [href]="album.link.attributes.href" class="btn btn-primary" target="_blank">Listen on Apple Music</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   

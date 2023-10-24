@@ -1,7 +1,11 @@
 <div class="container">
-    <h1 class="text-center my-4">Top 100 Albums</h1>
+    <h1 class="text-center my-4">Top 100 Albums from Itunes</h1>
+    <div class="form-group">
+        <label for="typeahead-basic">Search for a album with artist name or album name:</label>
+        <input type="text" class="form-control" placeholder="Search for albums" [(ngModel)]="searchTerm" (input)="onSearch()">
+      </div>
     <div class="row">
-      <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let album of (top100Albums | async)">
+      <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let album of (filteredAlbums  | async)">
         <div class="card mb-4">
           <img [src]="album['im:image'][2].label" class="card-img-top" alt="{{ album['im:name'].label }}">
           <div class="card-body">

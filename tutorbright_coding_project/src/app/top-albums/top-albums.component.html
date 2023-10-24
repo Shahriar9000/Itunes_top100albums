@@ -1,0 +1,12 @@
+<div *ngIf="top100Albums">
+    <h1>Top 100 Albums</h1>
+    <ul>
+      <li *ngFor="let album of top100Albums">
+        <img [src]="album['im:image'][2].label" alt="{{ album['im:name'].label }}">
+        <h2>{{ album['im:name'].label }}</h2>
+        <p>Artist: {{ album['im:artist'].label }}</p>
+        <p>Price: {{ album['im:price'].label }}</p>
+      </li>
+    </ul>
+  </div>
+  

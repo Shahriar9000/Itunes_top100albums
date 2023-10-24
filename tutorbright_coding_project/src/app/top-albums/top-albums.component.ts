@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ItunesService } from '../itunes.service';
+import { ItunesService } from '../../services/itunes.service';
+import { ITunesResponse, Album } from '../../models/album.model';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-album-list',
@@ -7,14 +10,11 @@ import { ItunesService } from '../itunes.service';
   styleUrls: ['./top-albums.component.scss'],
 })
 export class TopAlbumsComponent implements OnInit {
-  top100Albums: any;
+  top100Albums!: Observable<Album[]>;
 
   constructor(private itunesService: ItunesService) {}
 
   ngOnInit(): void {
-    this.itunesService.getTop100Albums().subscribe((data) => {
-      this.top100Albums = data.feed.entry;
-      console.log(this.top100Albums);
-    });
+    this.top100Albums = this.itunesService.getTop100Albums();
   }
 }

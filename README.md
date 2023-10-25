@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ### Objective
 
 Tutor Bright is branching into the music business and needs a new website. Build it using TypeScript and Angular.
@@ -41,3 +42,7 @@ Please organize, design, test and document your code as if it were going into pr
 All the best and happy coding,
 
 The Tutor Bright Team
+=======
+# Itunes_top100albums
+The webpage shows Itunes top 100 albums, with features like searching and sorting using Angular-Typescript
+>>>>>>> 6432b2a969f41a849fc8b43a899ddbdbca393c6d
